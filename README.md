@@ -186,3 +186,12 @@ sudo systemctl status fail2ban
 ### В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.
 ## Решение 2
 
+принудительно выключем Fail2Ban, така как он прекрасно засекает аткау на порт SSH с настройками по умолчанию
+```
+systemctl stop fail2ban
+```
+
+![рис 1](https://github.com/ysatii/network_protection/blob/main/img/image2_1.jpg) 
+![рис 2](https://github.com/ysatii/network_protection/blob/main/img/image2_2.jpg) 
+![рис 3](https://github.com/ysatii/network_protection/blob/main/img/image2_3.jpg) 
+![рис 4](https://github.com/ysatii/network_protection/blob/main/img/image2_4.jpg) 
