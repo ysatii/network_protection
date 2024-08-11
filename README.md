@@ -77,7 +77,55 @@ sudo suricata-update
 
 ## Решение 1 
  
- 
+для выполнения задачи подготовим две машины  
+1. машина для произведения атак 192.168.4.26   
+2. атакуемая машина 192.168.4.70   
+на машине 192.168.4.70 отключаем меж сетевойэкран командой  
+```
+sudo ufw disable
+```
+на атакуемой машине 
+
+Откроем окно и выполним команду, для запуска системы детектирования атак
+```
+sudo suricata -c /etc/suricata/suricata.yaml -i enp0s3 
+```
+
+Откроем еще окно для просмотра логов suricata и выполним команду  
+```
+sudo tail f /var/log/suricata/fast.log
+```
+в этом оке будем сотреть логи поле выполнения команд на операционной системе kali-linux
+
+1. **sudo nmap -sA 192.168.4.70  **  
+![рис 1](https://github.com/ysatii/network_protection/blob/main/img/image1_1.jpg)
+нет записей в логе
+
+2. **sudo nmap -sT 192.168.4.70  **  
+
+![рис 2](https://github.com/ysatii/network_protection/blob/main/img/image1_2.jpg)
+![рис 3](https://github.com/ysatii/network_protection/blob/main/img/image1_3.jpg)
+Опция сканурует открытые порт TCP
+22/tcp   open  ssh
+7070/tcp open  realserver
+
+открыт порт SSH !! 
+
+3. **sudo nmap -sS 192.168.4.70  ** 
+![рис 4](https://github.com/ysatii/network_protection/blob/main/img/image1_4.jpg)
+![рис 5](https://github.com/ysatii/network_protection/blob/main/img/image1_5.jpg) 
+(TCP SYN сканирование) .
+SYN это используемый по умолчанию и наиболее популярный тип сканирования. На то есть
+несколько причин. Он может быть быстро запущен, он способен сканировать тысячи портов
+в секунду при быстром соединении, его работе не препятствуют ограничивающие
+бранмауэры. Этот тип сканирования относительно ненавящив и незаметен, т.к. при таком
+сканировании TCP соединение никогда не устанавливается до конца
+
+
+4. **sudo nmap -sV 192.168.4.70  **  
+Исследуем службу версии 
+![рис 6](https://github.com/ysatii/network_protection/blob/main/img/image1_6.jpg)
+![рис 7](https://github.com/ysatii/network_protection/blob/main/img/image1_7.jpg) 
 
 
 
