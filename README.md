@@ -190,8 +190,21 @@ sudo systemctl status fail2ban
 ```
 systemctl stop fail2ban
 ```
-
+наблюдаем сброс соеденения
 ![рис 1](https://github.com/ysatii/network_protection/blob/main/img/image2_1.jpg) 
-![рис 2](https://github.com/ysatii/network_protection/blob/main/img/image2_2.jpg) 
-![рис 3](https://github.com/ysatii/network_protection/blob/main/img/image2_3.jpg) 
-![рис 4](https://github.com/ysatii/network_protection/blob/main/img/image2_4.jpg) 
+
+принудительно выключим fail2ban для чистоты эскперемента  
+![рис 2](https://github.com/ysatii/network_protection/blob/main/img/image2_2.jpg)  
+
+удалось подобрать пароль!  
+![рис 3](https://github.com/ysatii/network_protection/blob/main/img/image2_3.jpg)  
+
+лог Suricata  
+![рис 4](https://github.com/ysatii/network_protection/blob/main/img/image2_4.jpg)  
+
+лог Fail2Ban
+удалось подобрать пароль!  
+![рис 5](https://github.com/ysatii/network_protection/blob/main/img/image2_5.jpg)  
+
+лог Suricata  
+![рис 6](https://github.com/ysatii/network_protection/blob/main/img/image2_6.jpg)
