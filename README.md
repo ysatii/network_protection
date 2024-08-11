@@ -11,6 +11,55 @@
 
 Обе системы должны находится в одной подсети.
 
+## Произведем подготовку ситемы!
+
+Установим необходимые пакеты   
+```
+sudo apt -y install libpcre3 libpcre3-dev build-essential autoconf automake libtool libpcap-dev libnet1-dev libyaml-0-2 libyaml-dev zlib1g zlib1g-dev libmagic-dev libcap-ng-dev libjansson-dev pkg-config libnetfilter-queue-dev geoip-bin geoip-database geoipupdate apt-transport-https
+```
+
+Подключаем внешний репозиторий:   
+```
+sudo add-apt-repository ppa:oisf/suricata-stable
+sudo apt-get update
+```
+
+
+Устанавливаем последнюю стабильную версию Suricata:  
+```
+sudo apt-get install suricata
+```
+
+Настройки по умолчанию хранятся в файле /etc/default/suricata, 
+```
+sudo nano /etc/default/suricata
+```
+
+а пользовательские — в /etc/suricata/suricata.yaml. 
+```
+sudo nano /etc/suricata/suricata.yaml
+```
+
+Чтобы завершить настройку потребуется установить suricata-update для обновления и загрузки правил.
+```
+sudo apt install python-pip
+sudo pip install pyyaml
+sudo pip install <a href="https://github.com/OISF/suricata-update/archive/master.zip">https://github.com/OISF/suricata-update/archive/master.zip</a>
+sudo pip install --pre --upgrade suricata-update
+```
+Дальше нам нужно запустить команду suricata-update для установки набора правил Emerging Threats Open:
+```
+sudo suricata-update 
+```
+
+![рис 1](https://github.com/ysatii/network_protection/blob/main/img/image0_1.jpg)
+
+[рис 2](https://github.com/ysatii/network_protection/blob/main/img/image0_2.jpg)
+
+[рис 3](https://github.com/ysatii/network_protection/blob/main/img/image0_3.jpg)
+
+[рис 4](https://github.com/ysatii/network_protection/blob/main/img/image0_4.jpg)
+
 ## Задание 1
 Проведите разведку системы и определите, какие сетевые службы запущены на защищаемой системе:
 
@@ -28,11 +77,8 @@
 
 ## Решение 1 
  
-размер всех индексов именно таблиц 
-```
- select index_length from information_schema.tables WHERE table_schema = 'sakila' and TABLE_TYPE = 'BASE TABLE'
-```
-![рис 1](https://github.com/ysatii/DB-HW4/blob/main/img/image1.jpg)
+ 
+
 
 
 
