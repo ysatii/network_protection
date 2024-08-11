@@ -145,12 +145,23 @@ sudo systemctl status fail2ban
 1. **sudo nmap -sA 192.168.4.70**
 нет записей в логе  
 
-**sudo nmap -sT 192.168.4.70**
+2. **sudo nmap -sT 192.168.4.70**
 ![рис 10](https://github.com/ysatii/network_protection/blob/main/img/image1_10.jpg)  
+изменений в логе нет, сам Fail2Ban работает на снове статистики, считаю что данных мало для срабатывания
 
-**sudo nmap -sS 192.168.4.70**
+3. **sudo nmap -sS 192.168.4.70**
+![рис 10](https://github.com/ysatii/network_protection/blob/main/img/image1_11.jpg)  
 
-**sudo nmap -sV 192.168.4.70**
+
+4. **sudo nmap -sV 192.168.4.70**
+![рис 10](https://github.com/ysatii/network_protection/blob/main/img/image1_12.jpg)  
+
+лог сервиса Fail2Ban
+![рис 10](https://github.com/ysatii/network_protection/blob/main/img/image1_13.jpg) 
+
+
+сервис Fail2Ban во время атаки был в рабочем состоянии
+
 
 ## Задание 2
 
