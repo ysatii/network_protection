@@ -190,7 +190,9 @@ sudo systemctl status fail2ban
 ```
 systemctl stop fail2ban
 ```
-наблюдаем сброс соеденения
+наблюдаем сброс соеденения  
+мы постоянно работали по 22 порту! производя множество запросов за короткое время
+что и привело к срабатыванию Fail2Ban  
 ![рис 1](https://github.com/ysatii/network_protection/blob/main/img/image2_1.jpg) 
 
 принудительно выключим fail2ban для чистоты эскперемента  
