@@ -54,11 +54,11 @@ sudo suricata-update
 
 ![рис 1](https://github.com/ysatii/network_protection/blob/main/img/image0_1.jpg)
 
-[рис 2](https://github.com/ysatii/network_protection/blob/main/img/image0_2.jpg)
+![рис 2](https://github.com/ysatii/network_protection/blob/main/img/image0_2.jpg)
 
-[рис 3](https://github.com/ysatii/network_protection/blob/main/img/image0_3.jpg)
+![рис 3](https://github.com/ysatii/network_protection/blob/main/img/image0_3.jpg)
 
-[рис 4](https://github.com/ysatii/network_protection/blob/main/img/image0_4.jpg)
+![рис 4](https://github.com/ysatii/network_protection/blob/main/img/image0_4.jpg)
 
 ## Задание 1
 Проведите разведку системы и определите, какие сетевые службы запущены на защищаемой системе:
