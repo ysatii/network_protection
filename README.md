@@ -184,7 +184,8 @@ sudo systemctl status fail2ban
 Дополнительная информация по Fail2Ban:https://putty.org.ru/articles/fail2ban-ssh.html.  
 
 ### В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.
-## Решение 2
+## Решение 2.1
+
 
 принудительно выключем Fail2Ban, така как он прекрасно засекает аткау на порт SSH с настройками по умолчанию
 ```
@@ -210,3 +211,20 @@ systemctl stop fail2ban
 
 лог Suricata  
 ![рис 6](https://github.com/ysatii/network_protection/blob/main/img/image2_6.jpg)
+
+## Решение 2.2  
+откроем /etc/fail2ban/jail.conf и  изменим настройки  секции ssh становим enabled в true.  
+
+![рис 7](https://github.com/ysatii/network_protection/blob/main/img/image2_7.jpg)  
+
+включим  Fail2Ban
+![рис 8](https://github.com/ysatii/network_protection/blob/main/img/image2_8.jpg)  
+
+Соедение сброшено узлом который пытались атаковать
+![рис 9](https://github.com/ysatii/network_protection/blob/main/img/image2_9.jpg)  
+
+лог  Fail2Ban, видим явное блокирование ip 192.168.4.26
+![рис 10](https://github.com/ysatii/network_protection/blob/main/img/image2_10.jpg) 
+
+лог Suricata
+![рис 11](https://github.com/ysatii/network_protection/blob/main/img/image2_11.jpg) 
