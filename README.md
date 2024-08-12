@@ -93,15 +93,15 @@ sudo suricata -c /etc/suricata/suricata.yaml -i enp0s3
 
 Откроем еще окно для просмотра логов suricata и выполним команду  
 ```
-sudo tail f /var/log/suricata/fast.log
+sudo tail -f /var/log/suricata/fast.log
 ```
-в этом оке будем сотреть логи поле выполнения команд на операционной системе kali-linux
+в этом окне будем смотреть логи поле выполнения команд на операционной системе kali-linux
 
-1. **sudo nmap -sA 192.168.4.70  **  
+1. **sudo nmap -sA 192.168.4.70**  
 ![рис 1](https://github.com/ysatii/network_protection/blob/main/img/image1_1.jpg)  
 нет записей в логе
 
-2. **sudo nmap -sT 192.168.4.70  **  
+2. **sudo nmap -sT 192.168.4.70**  
 
 ![рис 2](https://github.com/ysatii/network_protection/blob/main/img/image1_2.jpg)  
 ![рис 3](https://github.com/ysatii/network_protection/blob/main/img/image1_3.jpg)  
@@ -111,7 +111,7 @@ sudo tail f /var/log/suricata/fast.log
 
 открыт порт SSH !!  
 
-3. **sudo nmap -sS 192.168.4.70  **   
+3. **sudo nmap -sS 192.168.4.70**   
 ![рис 4](https://github.com/ysatii/network_protection/blob/main/img/image1_4.jpg)  
 ![рис 5](https://github.com/ysatii/network_protection/blob/main/img/image1_5.jpg)   
 (TCP SYN сканирование) .
@@ -122,7 +122,7 @@ SYN это используемый по умолчанию и наиболее 
 сканировании TCP соединение никогда не устанавливается до конца  
 
 
-4. **sudo nmap -sV 192.168.4.70  **    
+4. **sudo nmap -sV 192.168.4.70**    
 Исследуем службу версии   
 ![рис 6](https://github.com/ysatii/network_protection/blob/main/img/image1_6.jpg)  
 ![рис 7](https://github.com/ysatii/network_protection/blob/main/img/image1_7.jpg)  
@@ -228,3 +228,7 @@ systemctl stop fail2ban
 
 лог Suricata
 ![рис 11](https://github.com/ysatii/network_protection/blob/main/img/image2_11.jpg) 
+
+при включенном Fail2Ban, нам не удаеться подобрать пароль SSD, многократное обращение к порту 22, и подбор пароля вызывает срабатывание защиты
+и на какое-то время адрес атакуещего попадает в бан! 
+
